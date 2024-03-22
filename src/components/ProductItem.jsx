@@ -14,11 +14,11 @@ const ProductItem = ({ product, handleAddCart}) => {
     />
     <div className="product__body">
       <div className="product__body__header">
-        <h5>{product.title}</h5>
-        <p>{product.price.toFixed(2)}€</p>
+        <h5 className="product__title">{product.title}</h5>
+        <p className="product__price">{product.price.toFixed(2)}€</p>
       </div>
       <div className="product__body__description">
-        <p>{product.author}</p>
+        <p className="product__author">{product.author}</p>
       </div>
       <div className="product__body__footer">
         <button className="btn btn--primary" onClick={addCart} ><img src={cartIcon}/>AÑADIR AL CARRITO</button>

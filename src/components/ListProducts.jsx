@@ -34,7 +34,6 @@ const ListProducts = () => {
   };
 
   const addOne = (product) => {
-    console.log(product);
     const isOnCart = cart.find((item) => item.product.id === product.id);
     if (isOnCart) {
       setCart(
@@ -51,7 +50,6 @@ const ListProducts = () => {
   };
 
   const removeOne = (product) => {
-    console.log(product);
     const updatedCart = cart.map((item) =>
       item.product.id === product.id ? { ...item, count: item.count - 1 } : item
     );
@@ -64,15 +62,15 @@ const ListProducts = () => {
   };
   return (
     <>
-      <div className="products__cart">
+      <section className="products__cart">
         <button
           className="btn btn--primary"
           onClick={() => setIsCartVisible(true)}
         >
           <img src={cartIcon} />
-          Mirar carrito
+          Carrito
         </button>
-      </div>
+      </section>
       <section className="products__container">
         {products.map((product) => (
           <ProductItem

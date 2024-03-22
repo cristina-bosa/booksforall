@@ -41,8 +41,11 @@ const Cart = ({ cart, handleRemoveOne, handleAddOne, handleMenu }) => {
           <h2>Carrito</h2>
           <img src={closeIcon} onClick={closeMenu} alt="Cerrar" />
         </div>
-
-        <p>Tienes {cart.length} productos en el carrito</p>
+        <p>Tienes 
+          <span className="text--primary text--bold"> &nbsp; 
+            {cart.reduce((acc, item) => acc + item.count, 0)}
+          </span> 
+          &nbsp; productos en el carrito</p>
         {cart.map((product) => (
           <div key={product.product.id} className="cart__container__product">
             <img
@@ -51,9 +54,9 @@ const Cart = ({ cart, handleRemoveOne, handleAddOne, handleMenu }) => {
               alt={product.product.title}
             />
             <div className="cart__container__product__body">
-              <h5>{product.product.title}</h5>
-              <p>{product.product.price.toFixed(2)}€</p>
-              <p>{product.product.author}</p>
+              <h5 className="product__title">{product.product.title}</h5>
+              <p className="product__price">{product.product.price.toFixed(2)}€</p>
+              <p className="product__author">{product.product.author}</p>
 
               <div className="cart__container__product__footer">
                 <button
@@ -74,7 +77,7 @@ const Cart = ({ cart, handleRemoveOne, handleAddOne, handleMenu }) => {
           </div>
         ))}
         <div className="discount">
-          <form onSubmit={applicateDiscount} className="discount">
+          <form onSubmit={applicateDiscount} className="discount__form">
             <input
               className="input input--primary"
               type="text"
@@ -85,13 +88,16 @@ const Cart = ({ cart, handleRemoveOne, handleAddOne, handleMenu }) => {
               Aplicar
             </button>
           </form>
-          <div>
-            <p>{validateDiscount}</p>
+          <div >
+            <p className={`${validateDiscount ? 'discount__message' : ''}`}>{validateDiscount}</p>
           </div>
         </div>
         <div className="total">
+          <div>
           <p>
-            Total:{" "}
+            {cart.reduce((acc, item) => acc + item.count, 0)} productos
+          </p>
+          <p>
             {total === 0
               ? cart
                   .reduce(
@@ -101,10 +107,9 @@ const Cart = ({ cart, handleRemoveOne, handleAddOne, handleMenu }) => {
                   .toFixed(2)
               : total}
             €{" "}
-          </p>
-          <p></p>
-        </div>
-        <div className="buttons">
+          </p>          
+
+          </div>
           <button className="btn btn--primary">Comprar</button>
         </div>
       </div>
