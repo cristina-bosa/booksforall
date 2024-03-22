@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'NunitoBold';
+  src: url('/fonts/Nunito-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NunitoRegular';
+  src: url('/fonts/Nunito-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$regular: 'NunitoRegular', sans-serif;
+$bold: 'NunitoBold', sans-serif;
+
+.text{
+  &--m{
+    font-size: 1.2rem;
+    font-family: $regular;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  &--20{
+    width: 20ch;
+    
+  }
+  &--25{
+    width: 25ch;
+  }
+  &--60{
+    width: 60ch;
+  }
+  &--55{
+    width: 55ch;
+   
+  }
+  &--l {
+    font-size: 1.5rem;
+    font-family: $regular;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  &--xl{
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  
+  }
+  &--xxl{
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+}

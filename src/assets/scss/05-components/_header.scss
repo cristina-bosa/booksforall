@@ -1,0 +1,15 @@
+@use "../00-settings/variables" as v;
+
+header{
+  position: sticky;
+  top: 0;
+  transition: top .3s ease;
+
+}
+.header{
+  display: flex;
+  padding: 1rem 0;  
+  position: sticky;
+  top: 1rem;
+  transition: top .3s ease;
+}

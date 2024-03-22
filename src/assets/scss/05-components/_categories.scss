@@ -1,0 +1,28 @@
+@use "../00-settings/variables";
+
+.products__categories{
+  
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  align-items: center;
+  ul{
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    li{
+      a{
+        text-decoration: none;
+        color: variables.$text-color;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: .5rem 1rem;
+        border-radius: 1.5rem;
+        &:hover{
+          background-color: variables.$primary-color;
+          color: variables.$text-color;
+        }
+      }
+    }
+  }
+}

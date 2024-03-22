@@ -1,0 +1,22 @@
+@use "../00-settings/variables";
+
+:root {
+  //light theme
+  --background-color: #{variables.$background-color};
+  --background-closer-color: #{variables.$background-color-closer};
+  --text-color: #{variables.$text-color};
+  --text-gray: #{variables.$text-gray};
+  --text-white: #{variables.$text-white};
+  --primary-color: #{variables.$primary-color};
+
+}
+
+
+body {
+  background-color: #FBFBFB;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--text-color);
+  margin: 0 1.5rem;
+  line-height: 1.5;
+
+}
